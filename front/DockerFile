@@ -1,8 +1,0 @@
-FROM node:10.19.0
-
-RUN apt-get update && apt install git && npm install node-sass@4.14.1
-RUN git clone https://github.com/StepanLyahov/TodoFront_lab2.git
-
-EXPOSE 3000
-
-ENTRYPOINT cd TodoFront_lab2/todo_front_lab2 && npm install && npm run start

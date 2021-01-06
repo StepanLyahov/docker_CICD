@@ -1,23 +1,23 @@
 version: '3'
 services:
 
-  front:
-    build:
-      context: .
-      dockerfile: front/DockerFile
-    ports:
-      - 3000:3000
-    restart: always
-    environment:
-      PUBLIC_API_URL: 127.0.0.1:8080
+#  front:
+#    build:
+#      context: .
+#      dockerfile: front/DockerFile
+#    ports:
+#      - 3000:3000
+#    restart: always
+#    environment:
+#      PUBLIC_API_URL: 127.0.0.1:8080
 
   back:
     build:
       context: .
       dockerfile: back/DockerFile
     environment:
-      DB_URL: db:5432/lab4_web
-      DB_USERNAME: stepan
+      DB_URL: db:5432/rgz
+      DB_USERNAME: postgres
       DB_PASSWORD: postgres
     ports:
       - 8080:8080
@@ -30,8 +30,8 @@ services:
     volumes:
       - ./data:/var/lib/postgresql/data
     environment:
-      - POSTGRES_USER=stepan
+      - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
-      - POSTGRES_DB=lab4_web
+      - POSTGRES_DB=rgz
     restart: always
 

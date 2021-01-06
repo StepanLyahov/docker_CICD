@@ -1,9 +1,9 @@
 FROM openjdk:11
 
 RUN apt-get update && apt install git && apt-get install maven -y
-RUN git clone https://github.com/StepanLyahov/back_db_lab4_web.git -b lab5_web
-RUN mvn -f back_db_lab4_web/pom.xml clean package
+RUN git clone <сюда записать свою ссылку на свой гит на этот проект>
+RUN mvn -f back_db_lab4_web/pom.xml clean package  !!!!!!Тут проверь, чтобы был правильный путь к pom
 
 EXPOSE 8080
 
-ENTRYPOINT ["java", "-jar", "back_db_lab4_web/target/back_db_lab4_web-1.0-SNAPSHOT.jar"]
+ENTRYPOINT ["java", "-jar", "back_db_lab4_web/target/back_db_lab4_web-1.0-SNAPSHOT.jar"] !!!!!! тут проверь, чтобы был правильный путь к jar
